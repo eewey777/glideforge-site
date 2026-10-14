@@ -98,3 +98,10 @@ footer img{height:52px;border-radius:8px;margin-bottom:16px}
   .links.open{display:flex}
   .menu-btn{display:block}
 }
+
+.chooser-title{text-align:center;color:var(--accent);font-size:20px;margin:8px 0 16px}
+.chooser{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px}
+.pick{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+.pick h4{margin:0 0 8px;color:var(--text);font-size:16px}
+.pick p{margin:0;color:var(--muted);font-size:14px}
+@media(max-width:720px){.chooser{grid-template-columns:1fr}}
