@@ -4,134 +4,126 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GlideForge — Pro Gaming Mouse Pads</title>
-<meta name="description" content="GlideForge gaming mouse pads — engineered glide, forged for victory. Speed, control and XXL desk mats for esports players.">
-<link rel="stylesheet" href="style.css">
+<meta name="description" content="GlideForge pro-grade gaming mouse pads. Speed, control and XXL desk mats engineered for victory.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="nav">
-  <a class="brand" href="#top">
-    <img data-logo alt="GlideForge logo">
-    <span>GlideForge</span>
-  </a>
-  <nav class="links">
-    <a href="#products">Products</a>
-    <a href="#features">Why GlideForge</a>
-    <a href="#specs">Specs</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<nav>
+  <a class="brand" href="#top"><img data-logo alt="GlideForge logo"><span>GlideForge</span></a>
+  <button class="lang-btn" id="langBtn">中文</button>
   <button class="menu-btn" aria-label="Menu">☰</button>
-</header>
+  <div class="links">
+    <a href="#products" data-i18n="nav.products">Products</a>
+    <a href="#features" data-i18n="nav.why">Why Us</a>
+    <a href="#specs" data-i18n="nav.specs">Specs</a>
+    <a href="#story" data-i18n="nav.story">Our Story</a>
+    <a href="#contact" data-i18n="nav.contact">Contact</a>
+  </div>
+</nav>
 
-<section class="hero" id="top">
+<header class="hero" id="top">
   <div class="hero-inner">
     <img class="hero-logo" data-logo alt="GlideForge — Gaming Mouse Pad">
-    <h1>GLIDE SMOOTHER.<br>AIM SHARPER.</h1>
-    <p class="tagline">Pro-grade gaming mouse pads, engineered for esports precision.<br>Forged for victory — one flick at a time.</p>
+    <p class="badge" data-i18n="hero.badge">PRECISION ENGINEERED FOR VICTORY</p>
+    <h1><span data-i18n="hero.h1a">Glide Like Lightning.</span><br><span class="accent" data-i18n="hero.h1b">Strike Like Thunder.</span></h1>
+    <p class="sub" data-i18n="hero.sub">Pro-grade gaming mouse pads with buttery-smooth surfaces, pixel-precise tracking and marathon-ready durability — built for every clutch moment.</p>
     <div class="cta-row">
-      <a class="btn primary" href="#products">Explore the Lineup</a>
-      <a class="btn ghost" href="#specs">Tech Specs</a>
+      <a class="btn primary" href="#products" data-i18n="hero.cta1">Explore the Lineup</a>
+      <a class="btn ghost" href="#contact" data-i18n="hero.cta2">Contact Us</a>
+    </div>
+    <div class="stats">
+      <div data-i18n="hero.s1">Pro-grade surfaces</div>
+      <div data-i18n="hero.s2">Anti-fray stitched edges</div>
+      <div data-i18n="hero.s3">Water-resistant coating</div>
+      <div data-i18n="hero.s4">Natural rubber base</div>
     </div>
   </div>
-  <div class="hero-glow"></div>
-</section>
+</header>
 
-<section class="strip">
-  <div><strong>0.1s</strong><span>faster target acquisition*</span></div>
-  <div><strong>4mm</strong><span>pro-grade thickness</span></div>
-  <div><strong>900mm</strong><span>XXL desk coverage</span></div>
-  <div><strong>100%</strong><span>stitched anti-fray edges</span></div>
-</section>
-<p class="fineprint">*Based on internal glide-resistance lab tests vs. generic office pads.</p>
-
-<section id="products" class="section">
-  <h2>THE LINEUP</h2>
-  <p class="sub">Three surfaces. One obsession: your aim.</p>
+<section id="products">
+  <h2 data-i18n="products.title">The Lineup</h2>
   <div class="cards">
-
     <article class="card">
-      <div class="card-badge">SPEED</div>
-      <h3>SWIFT</h3>
-      <p class="card-desc">Ultra-smooth speed weave for low-DPI flick shots. Your crosshair gets there first.</p>
-      <ul>
-        <li>450 × 400 × 3 mm</li>
-        <li>Speed-weave polyester surface</li>
-        <li>Low static &amp; dynamic friction</li>
+      <div class="tag" data-i18n="products.swift.tag">SPEED EDITION</div>
+      <h3>GlideForge SWIFT</h3>
+      <p data-i18n="products.swift.desc">Ultra-smooth speed surface for lightning-fast flicks and tracking.</p>
+      <ul class="specs">
+        <li><span data-i18n="spec.size">Size</span><b>450 × 400 mm</b></li>
+        <li><span data-i18n="spec.thickness">Thickness</span><b>4 mm</b></li>
+        <li><span data-i18n="spec.surface">Surface</span><b data-i18n="products.swift.surface">Speed weave</b></li>
+        <li><span data-i18n="spec.base">Base</span><b data-i18n="spec.rubber">Natural rubber</b></li>
       </ul>
-      <div class="price">From $19.99</div>
     </article>
-
-    <article class="card featured">
-      <div class="card-badge hot">MOST POPULAR</div>
-      <h3>CONTROL</h3>
-      <p class="card-desc">Micro-textured control surface for pixel-perfect micro-adjustments. Stop exactly on target.</p>
-      <ul>
-        <li>450 × 400 × 4 mm</li>
-        <li>Micro-texture control weave</li>
-        <li>Balanced glide + stopping power</li>
-      </ul>
-      <div class="price">From $24.99</div>
-    </article>
-
     <article class="card">
-      <div class="card-badge">XXL</div>
-      <h3>TITAN</h3>
-      <p class="card-desc">Full-desk coverage for keyboard, mouse and then some. One mat to rule your setup.</p>
-      <ul>
-        <li>900 × 400 × 4 mm</li>
-        <li>Extended desk-mat format</li>
-        <li>Water-resistant coating</li>
+      <div class="tag" data-i18n="products.control.tag">CONTROL EDITION</div>
+      <h3>GlideForge CONTROL</h3>
+      <p data-i18n="products.control.desc">Textured control surface for pixel-precise aim and steady micro-adjustments.</p>
+      <ul class="specs">
+        <li><span data-i18n="spec.size2">Size</span><b>450 × 400 mm</b></li>
+        <li><span data-i18n="spec.thickness2">Thickness</span><b>4 mm</b></li>
+        <li><span data-i18n="spec.surface2">Surface</span><b data-i18n="products.control.surface">Control texture</b></li>
+        <li><span data-i18n="spec.base2">Base</span><b data-i18n="spec.rubber2">Natural rubber</b></li>
       </ul>
-      <div class="price">From $34.99</div>
     </article>
-
+    <article class="card">
+      <div class="tag" data-i18n="products.titan.tag">XXL DESK MAT</div>
+      <h3>GlideForge TITAN</h3>
+      <p data-i18n="products.titan.desc">A full-desk battlestation. Room for keyboard, mouse and more.</p>
+      <ul class="specs">
+        <li><span data-i18n="spec.size3">Size</span><b>900 × 400 mm</b></li>
+        <li><span data-i18n="spec.thickness3">Thickness</span><b>4 mm</b></li>
+        <li><span data-i18n="spec.surface3">Surface</span><b data-i18n="products.titan.surface">Balanced hybrid</b></li>
+        <li><span data-i18n="spec.base3">Base</span><b data-i18n="spec.rubber3">Natural rubber</b></li>
+      </ul>
+    </article>
   </div>
-  <p class="fineprint">Prices are MSRP in USD and may vary by region and retailer.</p>
 </section>
 
-<section id="features" class="section dark">
-  <h2>WHY GLIDEFORGE</h2>
-  <p class="sub">Every detail is forged around one thing — your performance.</p>
+<section id="features">
+  <h2 data-i18n="features.title">Why GlideForge</h2>
   <div class="grid">
-    <div class="feat"><h3>🎯 Precision Tracking</h3><p>Lab-tested surface uniformity keeps your sensor reading clean — no skipping, no spin-outs.</p></div>
-    <div class="feat"><h3>⚡ Engineered Glide</h3><p>Speed and control weaves tuned separately, so each pad does exactly one job perfectly.</p></div>
-    <div class="feat"><h3>🧵 Stitched Edges</h3><p>Anti-fray stitched borders survive years of daily grinding without peeling.</p></div>
-    <div class="feat"><h3>🧲 Non-Slip Base</h3><p>High-density natural rubber base locks the pad down — even mid-clutch.</p></div>
-    <div class="feat"><h3>💧 Water-Resistant</h3><p>Spill-repellent coating shrugs off drinks; wipes clean in seconds.</p></div>
-    <div class="feat"><h3>🌍 Esports Ready</h3><p>Designed with competitive FPS players — tested at low DPI, high stakes.</p></div>
+    <div class="feat"><h3 data-i18n="features.f1t">Pro-Grade Surfaces</h3><p data-i18n="features.f1d">Tuned weaves for speed, control, or the perfect balance.</p></div>
+    <div class="feat"><h3 data-i18n="features.f2t">Pixel-Precise Tracking</h3><p data-i18n="features.f2d">Consistent glide keeps your sensor locked on target.</p></div>
+    <div class="feat"><h3 data-i18n="features.f3t">Anti-Fray Stitched Edges</h3><p data-i18n="features.f3d">Reinforced stitching for years of daily battles.</p></div>
+    <div class="feat"><h3 data-i18n="features.f4t">Water-Resistant Coating</h3><p data-i18n="features.f4d">Spills bead up and wipe away in seconds.</p></div>
+    <div class="feat"><h3 data-i18n="features.f5t">Natural Rubber Base</h3><p data-i18n="features.f5d">Grips your desk. Zero slip, zero lift.</p></div>
+    <div class="feat"><h3 data-i18n="features.f6t">Built for Marathons</h3><p data-i18n="features.f6d">Comfortable 4 mm cushioning for long sessions.</p></div>
   </div>
 </section>
 
-<section id="specs" class="section">
-  <h2>TECH SPECS</h2>
+<section id="specs">
+  <h2 data-i18n="specs.title">Tech Specs</h2>
   <div class="table-wrap">
   <table>
-    <tr><th></th><th>SWIFT</th><th>CONTROL</th><th>TITAN</th></tr>
-    <tr><td>Size</td><td>450 × 400 mm</td><td>450 × 400 mm</td><td>900 × 400 mm</td></tr>
-    <tr><td>Thickness</td><td>3 mm</td><td>4 mm</td><td>4 mm</td></tr>
-    <tr><td>Surface</td><td>Speed weave</td><td>Control micro-texture</td><td>Speed weave</td></tr>
-    <tr><td>Base</td><td colspan="3">Natural rubber, non-slip</td></tr>
-    <tr><td>Edges</td><td colspan="3">Anti-fray stitched</td></tr>
-    <tr><td>Coating</td><td colspan="3">Water-resistant</td></tr>
+    <tr><th data-i18n="specs.model">Model</th><td>SWIFT</td><td>CONTROL</td><td>TITAN</td></tr>
+    <tr><th data-i18n="specs.size">Size (L × W)</th><td>450 × 400 mm</td><td>450 × 400 mm</td><td>900 × 400 mm</td></tr>
+    <tr><th data-i18n="specs.thickness">Thickness</th><td>4 mm</td><td>4 mm</td><td>4 mm</td></tr>
+    <tr><th data-i18n="specs.surface">Surface Material</th><td data-i18n="specs.smooth">Smooth polyester</td><td data-i18n="specs.textured">Textured polyester</td><td data-i18n="specs.hybrid">Hybrid weave</td></tr>
+    <tr><th data-i18n="specs.base">Base Material</th><td data-i18n="specs.rubber4">Natural rubber</td><td data-i18n="specs.rubber5">Natural rubber</td><td data-i18n="specs.rubber6">Natural rubber</td></tr>
+    <tr><th data-i18n="specs.edge">Edge Finish</th><td data-i18n="specs.stitch">Anti-fray stitching</td><td data-i18n="specs.stitch2">Anti-fray stitching</td><td data-i18n="specs.stitch3">Anti-fray stitching</td></tr>
+    <tr><th data-i18n="specs.compat">Compatibility</th><td colspan="3" data-i18n="specs.compatv">All mice &amp; sensitivities</td></tr>
   </table>
   </div>
+  <p class="note" data-i18n="specs.note">* Specs shown are standard configurations and may be customized for bulk orders.</p>
 </section>
 
-<section id="about" class="section dark">
-  <h2>FORGED FOR GAMERS</h2>
-  <p class="story">GlideForge started with a simple frustration: mouse pads that slow you down when it matters most. We spent a year testing weaves, rubbers and coatings until the glide felt invisible — like your mouse floats and your aim just lands. No gimmicks. Just surface science, forged for gamers.</p>
+<section id="story">
+  <h2 data-i18n="story.title">Forged for Gamers</h2>
+  <p data-i18n="story.p1">GlideForge was born from a simple obsession: the perfect glide. We believe a mouse pad isn't an accessory — it's the foundation of every flick shot, every clutch play.</p>
+  <p data-i18n="story.p2">Every GlideForge pad is engineered with pro-grade materials, precision stitching, and surfaces tuned for real competitive play.</p>
 </section>
 
-<section id="contact" class="section">
-  <h2>GET IN TOUCH</h2>
-  <p class="sub">Wholesale, distribution and media inquiries welcome.</p>
-  <a class="btn primary big" href="mailto:eewey777@gmail.com">eewey777@gmail.com</a>
+<section id="contact">
+  <h2 data-i18n="contact.title">Get in Touch</h2>
+  <p data-i18n="contact.text">Questions about bulk orders, distribution, or custom designs? We'd love to hear from you.</p>
+  <a class="btn primary" href="mailto:eewey777@gmail.com" data-i18n="contact.btn">Email Us</a>
 </section>
 
 <footer>
   <img data-logo alt="GlideForge">
-  <p>© 2026 GlideForge. All rights reserved.<br>GLIDEFORGE and the GF mark are trademarks in preparation.</p>
+  <p>© 2026 GlideForge. <span data-i18n="footer.rights">All rights reserved.</span></p>
 </footer>
 
 <script src="script.js"></script>

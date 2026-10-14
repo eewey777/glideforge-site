@@ -9,3 +9,95 @@ document.querySelector(".menu-btn").addEventListener("click", () => {
 document.querySelectorAll(".links a").forEach(a =>
   a.addEventListener("click", () =>
     document.querySelector(".links").classList.remove("open")));
+
+// ---------- Bilingual (EN / 中文) ----------
+const I18N = {
+en: {
+"meta.title":"GlideForge — Pro Gaming Mouse Pads",
+"nav.products":"Products","nav.why":"Why Us","nav.specs":"Specs","nav.story":"Our Story","nav.contact":"Contact",
+"hero.badge":"PRECISION ENGINEERED FOR VICTORY",
+"hero.h1a":"Glide Like Lightning.","hero.h1b":"Strike Like Thunder.",
+"hero.sub":"Pro-grade gaming mouse pads with buttery-smooth surfaces, pixel-precise tracking and marathon-ready durability — built for every clutch moment.",
+"hero.cta1":"Explore the Lineup","hero.cta2":"Contact Us",
+"hero.s1":"Pro-grade surfaces","hero.s2":"Anti-fray stitched edges","hero.s3":"Water-resistant coating","hero.s4":"Natural rubber base",
+"products.title":"The Lineup",
+"products.swift.tag":"SPEED EDITION","products.swift.desc":"Ultra-smooth speed surface for lightning-fast flicks and tracking.","products.swift.surface":"Speed weave",
+"products.control.tag":"CONTROL EDITION","products.control.desc":"Textured control surface for pixel-precise aim and steady micro-adjustments.","products.control.surface":"Control texture",
+"products.titan.tag":"XXL DESK MAT","products.titan.desc":"A full-desk battlestation. Room for keyboard, mouse and more.","products.titan.surface":"Balanced hybrid",
+"spec.size":"Size","spec.thickness":"Thickness","spec.surface":"Surface","spec.base":"Base","spec.rubber":"Natural rubber",
+"spec.size2":"Size","spec.thickness2":"Thickness","spec.surface2":"Surface","spec.base2":"Base","spec.rubber2":"Natural rubber",
+"spec.size3":"Size","spec.thickness3":"Thickness","spec.surface3":"Surface","spec.base3":"Base","spec.rubber3":"Natural rubber",
+"features.title":"Why GlideForge",
+"features.f1t":"Pro-Grade Surfaces","features.f1d":"Tuned weaves for speed, control, or the perfect balance.",
+"features.f2t":"Pixel-Precise Tracking","features.f2d":"Consistent glide keeps your sensor locked on target.",
+"features.f3t":"Anti-Fray Stitched Edges","features.f3d":"Reinforced stitching for years of daily battles.",
+"features.f4t":"Water-Resistant Coating","features.f4d":"Spills bead up and wipe away in seconds.",
+"features.f5t":"Natural Rubber Base","features.f5d":"Grips your desk. Zero slip, zero lift.",
+"features.f6t":"Built for Marathons","features.f6d":"Comfortable 4 mm cushioning for long sessions.",
+"specs.title":"Tech Specs","specs.model":"Model","specs.size":"Size (L × W)","specs.thickness":"Thickness",
+"specs.surface":"Surface Material","specs.smooth":"Smooth polyester","specs.textured":"Textured polyester","specs.hybrid":"Hybrid weave",
+"specs.base":"Base Material","specs.rubber4":"Natural rubber","specs.rubber5":"Natural rubber","specs.rubber6":"Natural rubber",
+"specs.edge":"Edge Finish","specs.stitch":"Anti-fray stitching","specs.stitch2":"Anti-fray stitching","specs.stitch3":"Anti-fray stitching",
+"specs.compat":"Compatibility","specs.compatv":"All mice & sensitivities",
+"specs.note":"* Specs shown are standard configurations and may be customized for bulk orders.",
+"story.title":"Forged for Gamers",
+"story.p1":"GlideForge was born from a simple obsession: the perfect glide. We believe a mouse pad isn't an accessory — it's the foundation of every flick shot, every clutch play.",
+"story.p2":"Every GlideForge pad is engineered with pro-grade materials, precision stitching, and surfaces tuned for real competitive play.",
+"contact.title":"Get in Touch","contact.text":"Questions about bulk orders, distribution, or custom designs? We'd love to hear from you.","contact.btn":"Email Us",
+"footer.rights":"All rights reserved."
+},
+zh: {
+"meta.title":"GlideForge — 职业电竞鼠标垫",
+"nav.products":"产品","nav.why":"为什么选我们","nav.specs":"规格","nav.story":"品牌故事","nav.contact":"联系我们",
+"hero.badge":"为胜利而生的精准操控",
+"hero.h1a":"疾如闪电，","hero.h1b":"势如雷霆。",
+"hero.sub":"职业级游戏鼠标垫：顺滑表面、像素级精准定位、持久耐用——为每一场关键对决而生。",
+"hero.cta1":"浏览产品线","hero.cta2":"联系我们",
+"hero.s1":"职业级表面","hero.s2":"防脱线包边","hero.s3":"防水涂层","hero.s4":"天然橡胶底",
+"products.title":"产品线",
+"products.swift.tag":"速度版","products.swift.desc":"超顺滑竞速表面，甩枪与跟枪快如闪电。","products.swift.surface":"竞速编织",
+"products.control.tag":"操控版","products.control.desc":"细腻操控纹理，像素级精准定位，微调稳如磐石。","products.control.surface":"操控纹理",
+"products.titan.tag":"XXL 桌垫","products.titan.desc":"铺满桌面的战场，键盘、鼠标统统容下。","products.titan.surface":"均衡混合",
+"spec.size":"尺寸","spec.thickness":"厚度","spec.surface":"表面","spec.base":"底面","spec.rubber":"天然橡胶",
+"spec.size2":"尺寸","spec.thickness2":"厚度","spec.surface2":"表面","spec.base2":"底面","spec.rubber2":"天然橡胶",
+"spec.size3":"尺寸","spec.thickness3":"厚度","spec.surface3":"表面","spec.base3":"底面","spec.rubber3":"天然橡胶",
+"features.title":"为什么选择 GlideForge",
+"features.f1t":"职业级表面","features.f1d":"竞速、操控、均衡——三种精调编织，总有一款适合你。",
+"features.f2t":"像素级定位","features.f2d":"顺滑一致的滑动，让传感器始终锁定目标。",
+"features.f3t":"防脱线包边","features.f3d":"加固包边，陪你征战多年。",
+"features.f4t":"防水涂层","features.f4d":"水渍凝珠，轻轻一擦即净。",
+"features.f5t":"天然橡胶底","features.f5d":"紧抓桌面，零滑动、零翘边。",
+"features.f6t":"为持久战而生","features.f6d":"4mm 舒适厚度，久战不累。",
+"specs.title":"技术规格","specs.model":"型号","specs.size":"尺寸（长×宽）","specs.thickness":"厚度",
+"specs.surface":"表面材质","specs.smooth":"顺滑涤纶","specs.textured":"纹理涤纶","specs.hybrid":"混合编织",
+"specs.base":"底面材质","specs.rubber4":"天然橡胶","specs.rubber5":"天然橡胶","specs.rubber6":"天然橡胶",
+"specs.edge":"包边工艺","specs.stitch":"防脱线缝制","specs.stitch2":"防脱线缝制","specs.stitch3":"防脱线缝制",
+"specs.compat":"兼容性","specs.compatv":"全鼠标、全灵敏度适用",
+"specs.note":"* 所示规格为标准配置，批量订单可定制。",
+"story.title":"为玩家而锻造",
+"story.p1":"GlideForge 源于一个简单的执念：完美的顺滑。我们相信，鼠标垫不是配件——它是每一次甩枪、每一次残局操作的根基。",
+"story.p2":"每一款 GlideForge 垫子都采用职业级材料、精密包边，表面为真实竞技场景精调而成。",
+"contact.title":"联系我们","contact.text":"批量订购、经销合作或定制图案？欢迎联系我们。","contact.btn":"发送邮件",
+"footer.rights":"版权所有。"
+}
+};
+
+function setLang(l){
+  const d = I18N[l] || I18N.en;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const k = el.getAttribute("data-i18n");
+    if (d[k] !== undefined) el.textContent = d[k];
+  });
+  document.documentElement.lang = l === "zh" ? "zh-CN" : "en";
+  document.title = d["meta.title"];
+  document.getElementById("langBtn").textContent = l === "zh" ? "EN" : "中文";
+  try { localStorage.setItem("gf-lang", l); } catch(e) {}
+}
+(function(){
+  let l = "en";
+  try { l = localStorage.getItem("gf-lang") || "en"; } catch(e) {}
+  setLang(l);
+  document.getElementById("langBtn").addEventListener("click", () => {
+    setLang(document.documentElement.lang === "zh-CN" ? "en" : "zh");
+  });
+})();
