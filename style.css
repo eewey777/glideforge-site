@@ -109,3 +109,7 @@ footer img{height:52px;border-radius:8px;margin-bottom:16px}
 .price{font-size:26px;font-weight:700;color:var(--accent);margin:4px 0 10px}
 .contact-row{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
 .email-addr{color:var(--muted);font-size:16px;letter-spacing:.3px}
+
+.social-row{margin-bottom:16px}
+.social-row a{color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:6px 16px;border-radius:999px;font-size:13px}
+.social-row a:hover{color:var(--text);border-color:var(--accent)}
