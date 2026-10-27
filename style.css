@@ -112,4 +112,5 @@ footer img{height:52px;border-radius:8px;margin-bottom:16px}
 
 .social-row{margin-bottom:16px}
 .social-row a{color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:6px 16px;border-radius:999px;font-size:13px}
+.social-row a+a{margin-left:8px}
 .social-row a:hover{color:var(--text);border-color:var(--accent)}

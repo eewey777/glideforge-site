@@ -55,6 +55,7 @@ en: {
 "contact.b2t":"OEM & Custom","contact.b2d":"Your artwork, your logo, custom sizes. Samples available; timing confirmed per order.",
 "contact.b3t":"Distribution","contact.b3d":"Regional distributors and resellers welcome. Tell us your market and channels.",
 "contact.tiktok":"Follow us on TikTok",
+"contact.youtube":"Watch us on YouTube",
 "footer.rights":"All rights reserved."
 },
 zh: {
@@ -100,6 +101,7 @@ zh: {
 "contact.b2t":"OEM 定制","contact.b2d":"你的图案、你的 logo、定制尺寸都可以做。可先打样，周期按单确认。",
 "contact.b3t":"经销合作","contact.b3d":"欢迎区域经销商和零售商合作，告诉我们你的市场和渠道。",
 "contact.tiktok":"关注我们的 TikTok",
+"contact.youtube":"关注我们的 YouTube",
 "footer.rights":"版权所有。"
 }
 };
