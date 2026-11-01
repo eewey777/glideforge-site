@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pad Finder — GlideForge</title>
+<meta name="description" content="Answer 3 questions and get your GlideForge pad: SWIFT, CONTROL or TITAN — matched to your game, sensitivity and desk.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<style>
+:root{--bg:#07070c;--bg2:#0d0d15;--card:#111118;--blue:#2f7df6;--blue2:#1e5fd0;--text:#f2f4f8;--muted:#9aa3b2;--line:#1e1e2a}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;gap:18px;padding:14px 28px;background:rgba(7,7,12,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:800;font-size:20px;letter-spacing:.5px}
+.brand img{height:38px;border-radius:6px}
+.links{display:flex;gap:24px;margin-left:auto}
+.links a{color:var(--muted);text-decoration:none;font-size:15px}
+.links a:hover,.links a.on{color:var(--blue)}
+.lang-btn{background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:6px 12px;font-size:14px;cursor:pointer}
+.hero{padding:150px 24px 10px;text-align:center;max-width:860px;margin:0 auto}
+.hero h1{font-size:clamp(32px,5.5vw,52px);font-weight:900;letter-spacing:.5px;margin-bottom:14px}
+.hero p{color:var(--muted);font-size:17px}
+.wrap{max-width:760px;margin:0 auto;padding:26px 24px 70px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:36px 32px}
+.dots{display:flex;gap:8px;justify-content:center;margin-bottom:26px}
+.dots i{width:34px;height:5px;border-radius:3px;background:var(--line)}
+.dots i.on{background:var(--blue)}
+.q{font-size:24px;font-weight:800;text-align:center;margin-bottom:22px}
+.opts{display:grid;gap:12px}
+.opt{display:block;width:100%;text-align:left;background:var(--bg2);border:1px solid var(--line);color:var(--text);border-radius:12px;padding:16px 20px;font-size:16px;cursor:pointer;transition:border-color .15s,transform .15s;font-family:inherit}
+.opt:hover{border-color:var(--blue);transform:translateY(-2px)}
+.opt small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.hidden{display:none}
+.result{text-align:center}
+.result .tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:2px;color:var(--blue);border:1px solid var(--blue);border-radius:20px;padding:3px 12px;margin-bottom:14px}
+.result h2{font-size:38px;font-weight:900;margin-bottom:8px}
+.result .why{text-align:left;max-width:520px;margin:18px auto 6px;color:var(--muted)}
+.result .why li{margin-bottom:8px}
+.result .second{color:var(--muted);font-size:14px;margin-top:10px}
+.btn{display:inline-block;padding:14px 34px;border-radius:10px;font-weight:700;text-decoration:none;font-size:16px;background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;box-shadow:0 8px 30px rgba(47,125,246,.4);border:none;cursor:pointer;font-family:inherit}
+.btn.ghost{background:none;border:1px solid var(--line);color:var(--text);box-shadow:none}
+.btnrow{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.alt{text-align:center;margin-top:22px;color:var(--muted);font-size:14px}
+.alt a{color:var(--blue);text-decoration:none;font-weight:700}
+footer{border-top:1px solid var(--line);padding:34px 24px;text-align:center;color:var(--muted);font-size:14px}
+footer a{color:var(--muted)}
+@media(max-width:640px){.links{display:none}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="brand" href="index.html"><img src="assets/logo.jpg" alt="GlideForge logo"><span>GlideForge</span></a>
+  <div class="links">
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <a href="index.html#products" data-i18n="nav.products">Products</a>
+    <a href="tech.html" data-i18n="nav.tech">Tech Lab</a>
+    <a href="fun.html" data-i18n="nav.fun">Fun Zone</a>
+    <a href="finder.html" class="on" data-i18n="nav.finder">Pad Finder</a>
+    <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+  </div>
+  <button class="lang-btn" id="langBtn">中文</button>
+</nav>
+
+<header class="hero">
+  <h1 data-i18n="hero.h1">Pad Finder</h1>
+  <p data-i18n="hero.sub">Three questions. One pad that's actually right for how you play — not just the one with the flashiest box.</p>
+</header>
+
+<main class="wrap">
+  <div class="panel">
+    <div class="dots"><i id="d1" class="on"></i><i id="d2"></i><i id="d3"></i></div>
+
+    <div id="step1">
+      <div class="q" data-i18n="q1">What do you mostly play?</div>
+      <div class="opts">
+        <button class="opt" data-q="game" data-v="tac"><span data-i18n="q1a">Tactical FPS</span><small data-i18n="q1aS">CS2, Valorant — one taps and counter-strafes</small></button>
+        <button class="opt" data-q="game" data-v="track"><span data-i18n="q1b">Tracking-heavy FPS</span><small data-i18n="q1bS">Apex, Overwatch 2 — beams and fast 180s</small></button>
+        <button class="opt" data-q="game" data-v="moba"><span data-i18n="q1c">MOBA / strategy</span><small data-i18n="q1cS">League, Dota 2, RTS — precision clicking</small></button>
+        <button class="opt" data-q="game" data-v="mixed"><span data-i18n="q1d">A bit of everything</span><small data-i18n="q1dS">Games, work, whatever the day brings</small></button>
+      </div>
+    </div>
+
+    <div id="step2" class="hidden">
+      <div class="q" data-i18n="q2">Your sensitivity style?</div>
+      <div class="opts">
+        <button class="opt" data-q="sens" data-v="low"><span data-i18n="q2a">Low sens — arm player</span><small data-i18n="q2aS">Big swipes to turn around</small></button>
+        <button class="opt" data-q="sens" data-v="med"><span data-i18n="q2b">Medium</span><small data-i18n="q2bS">A mix of arm and wrist</small></button>
+        <button class="opt" data-q="sens" data-v="high"><span data-i18n="q2c">High sens — wrist only</span><small data-i18n="q2cS">Tiny movements, fast turns</small></button>
+        <button class="opt" data-q="sens" data-v="unknown"><span data-i18n="q2d">No idea</span><small data-i18n="q2dS">Never thought about it</small></button>
+      </div>
+    </div>
+
+    <div id="step3" class="hidden">
+      <div class="q" data-i18n="q3">How much desk space?</div>
+      <div class="opts">
+        <button class="opt" data-q="space" data-v="big"><span data-i18n="q3a">Plenty</span><small data-i18n="q3aS">A full desk, room to spread out</small></button>
+        <button class="opt" data-q="space" data-v="std"><span data-i18n="q3b">Standard</span><small data-i18n="q3bS">A normal gaming desk</small></button>
+        <button class="opt" data-q="space" data-v="small"><span data-i18n="q3c">Tight</span><small data-i18n="q3cS">Dorm desk, laptop setup, shared space</small></button>
+      </div>
+    </div>
+
+    <div id="result" class="hidden result">
+      <div class="tag" data-i18n="r.tag">YOUR PAD</div>
+      <h2 id="rName">GlideForge SWIFT</h2>
+      <p id="rLine" style="color:var(--muted)"></p>
+      <ul class="why" id="rWhy"></ul>
+      <p class="second" id="rSecond"></p>
+      <div class="btnrow">
+        <a class="btn" href="index.html#products" data-i18n="r.view">See the Pad</a>
+        <button class="btn ghost" id="rRedo" data-i18n="r.redo">Start Over</button>
+      </div>
+    </div>
+  </div>
+  <p class="alt"><span data-i18n="alt.t">Not sure about your sensitivity style?</span> <a href="edpi.html" data-i18n="alt.a">Calculate your eDPI →</a></p>
+</main>
+
+<footer>
+  <p>© 2026 GlideForge™. <span data-i18n="footer.rights">All rights reserved.</span> · <a href="index.html">gfpad.com</a></p>
+</footer>
+
+<script>
+const I18N = {
+en: {
+"nav.home":"Home","nav.products":"Products","nav.tech":"Tech Lab","nav.fun":"Fun Zone","nav.finder":"Pad Finder","nav.contact":"Contact",
+"hero.h1":"Pad Finder","hero.sub":"Three questions. One pad that's actually right for how you play — not just the one with the flashiest box.",
+"q1":"What do you mostly play?","q1a":"Tactical FPS","q1aS":"CS2, Valorant — one taps and counter-strafes","q1b":"Tracking-heavy FPS","q1bS":"Apex, Overwatch 2 — beams and fast 180s","q1c":"MOBA / strategy","q1cS":"League, Dota 2, RTS — precision clicking","q1d":"A bit of everything","q1dS":"Games, work, whatever the day brings",
+"q2":"Your sensitivity style?","q2a":"Low sens — arm player","q2aS":"Big swipes to turn around","q2b":"Medium","q2bS":"A mix of arm and wrist","q2c":"High sens — wrist only","q2cS":"Tiny movements, fast turns","q2d":"No idea","q2dS":"Never thought about it",
+"q3":"How much desk space?","q3a":"Plenty","q3aS":"A full desk, room to spread out","q3b":"Standard","q3bS":"A normal gaming desk","q3c":"Tight","q3cS":"Dorm desk, laptop setup, shared space",
+"r.tag":"YOUR PAD","r.view":"See the Pad","r.redo":"Start Over","r.second":"Close second: ",
+"alt.t":"Not sure about your sensitivity style?","alt.a":"Calculate your eDPI →","footer.rights":"All rights reserved.",
+"line.swift":"The speed surface. Zero-drag glide for flicks and tracking.",
+"line.control":"The precision surface. Stops exactly where you tell it to.",
+"line.titan":"The full-desk battlestation. Keyboard, mouse, and all the room you'll ever need.",
+"why.tac":"Tactical shooters are won on stop-on-a-dime precision — a control texture makes the mouse halt exactly on the head.",
+"why.track":"Tracking heroes and fast 180s need a glide that never drags — the less friction, the longer your beam stays on target.",
+"why.moba":"MOBA play is thousands of micro-clicks. A control surface keeps every one of them honest.",
+"why.mixed":"One surface for the whole desk means your mouse never runs off the edge mid-game — or mid-spreadsheet.",
+"why.low.titan":"Low sens means arm swipes. Arm swipes need width — 900mm of it.",
+"why.low.control":"Low-sens players let the pad stop the mouse, not their wrist. Extra dynamic friction is free braking.",
+"why.med":"Medium sens flicks start cleaner on a low-friction surface — less force to get moving, less overshoot.",
+"why.high":"High sens lives on micro-corrections. Extra stopping power keeps tiny movements clean instead of slippery.",
+"why.big":"You've got the desk for the full battlestation — use it."
+},
+zh: {
+"nav.home":"首页","nav.products":"产品","nav.tech":"科技小站","nav.fun":"娱乐专区","nav.finder":"选垫器","nav.contact":"联系我们",
+"hero.h1":"选垫器","hero.sub":"三个问题，给你一张真正适合你打法的垫子——不是包装盒最花哨的那张。",
+"q1":"你主玩什么？","q1a":"战术射击","q1aS":"CS2、无畏契约——爆头和急停","q1b":"跟枪型射击","q1bS":"Apex、守望先锋 2——跟枪和快速转身","q1c":"MOBA / 策略","q1cS":"英雄联盟、Dota 2、RTS——精准点击","q1d":"什么都玩","q1dS":"游戏、办公，看当天心情",
+"q2":"你的灵敏度风格？","q2a":"低灵敏——手臂流","q2aS":"转身要大幅拉枪","q2b":"中等","q2bS":"手臂和手腕混合","q2c":"高灵敏——手腕流","q2cS":"小幅移动，快速转身","q2d":"没概念","q2dS":"从来没想过这事",
+"q3":"桌面空间多大？","q3a":"很充裕","q3aS":"整张大桌子，随便铺","q3b":"标准","q3bS":"普通电竞桌","q3c":"比较紧","q3cS":"宿舍桌、笔记本、拼桌",
+"r.tag":"你的垫子","r.view":"看看这张垫子","r.redo":"重新选","r.second":"接近的选择：",
+"alt.t":"不确定自己的灵敏度风格？","alt.a":"先算一下 eDPI →","footer.rights":"保留所有权利。",
+"line.swift":"速度面。零拖沓的滑动，为拉枪和跟枪而生。",
+"line.control":"控制面。你说停，它就停在那里。",
+"line.titan":"全桌大战场。键盘、鼠标，和你需要的所有空间。",
+"why.tac":"战术射击赢在说停就停的精度上——控制纹理让鼠标稳稳停在头上。",
+"why.track":"跟枪英雄和快速 180 度转身需要不拖沓的滑动——摩擦越小，光束在目标上停得越久。",
+"why.moba":"MOBA 是成千上万次微点击。控制面让每一次点击都不飘。",
+"why.mixed":"整张桌面一张垫，鼠标永远不会在游戏中途——或者做表格途中——滑出边缘。",
+"why.low.titan":"低灵敏意味着手臂大幅拉枪。大幅拉枪需要宽度——900 毫米的那种。",
+"why.low.control":"低灵敏玩家靠垫子刹车，不靠手腕。更高的动摩擦就是免费的刹车片。",
+"why.med":"中等灵敏的拉枪在低摩擦面上启动更干净——起步省力，也不容易过头。",
+"why.high":"高灵敏靠的是微修正。更强的刹车力让小幅移动干净利落，而不是滑溜溜。",
+"why.big":"你的桌面配得上全桌大战场——用起来。"
+}};
+let lang = "en";
+try { lang = localStorage.getItem("gf-lang") || "en"; } catch(e) {}
+const T = k => I18N[lang][k] || k;
+function apply(l){
+  lang = l;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const k = el.getAttribute("data-i18n");
+    if (I18N[l][k]) el.innerHTML = I18N[l][k];
+  });
+  document.getElementById("langBtn").textContent = l === "zh" ? "EN" : "中文";
+  document.documentElement.lang = l === "zh" ? "zh-CN" : "en";
+  try { localStorage.setItem("gf-lang", l); } catch(e) {}
+  if (answers.game && answers.sens && answers.space) showResult();
+}
+document.getElementById("langBtn").addEventListener("click", () => apply(lang === "zh" ? "en" : "zh"));
+
+// ---------- Quiz ----------
+const answers = {};
+const POINTS = {
+  game: { tac:{control:2}, track:{swift:2}, moba:{control:1}, mixed:{titan:1, swift:1} },
+  sens: { low:{titan:2, control:1}, med:{swift:1}, high:{control:1}, unknown:{} },
+  space:{ big:{titan:1}, std:{}, small:{titan:-3} }
+};
+const WHY = {
+  "game.tac.control":"why.tac", "game.track.swift":"why.track", "game.moba.control":"why.moba",
+  "game.mixed.titan":"why.mixed", "sens.low.titan":"why.low.titan", "sens.low.control":"why.low.control",
+  "sens.med.swift":"why.med", "sens.high.control":"why.high", "space.big.titan":"why.big"
+};
+const NAMES = { swift:"GlideForge SWIFT", control:"GlideForge CONTROL", titan:"GlideForge TITAN" };
+const LINES = { swift:"line.swift", control:"line.control", titan:"line.titan" };
+
+function goto(step){
+  [1,2,3].forEach(n => {
+    document.getElementById("step"+n).classList.toggle("hidden", n !== step);
+    document.getElementById("d"+n).classList.toggle("on", n <= step);
+  });
+  document.getElementById("result").classList.add("hidden");
+}
+function showResult(){
+  const score = { swift:0, control:0, titan:0 };
+  ["game","sens","space"].forEach(q => {
+    const p = POINTS[q][answers[q]] || {};
+    Object.keys(p).forEach(m => score[m] += p[m]);
+  });
+  const order = ["swift","control","titan"].sort((a,b) => score[b]-score[a]);
+  const win = order[0], second = order[1];
+  document.getElementById("rName").textContent = NAMES[win];
+  document.getElementById("rLine").textContent = T(LINES[win]);
+  const whys = [];
+  ["game","sens","space"].forEach(q => {
+    const key = q + "." + answers[q] + "." + win;
+    if (WHY[key]) whys.push(T(WHY[key]));
+  });
+  if (!whys.length) whys.push(T(LINES[win]));
+  document.getElementById("rWhy").innerHTML = whys.map(w => "<li>" + w + "</li>").join("");
+  document.getElementById("rSecond").textContent =
+    (score[second] >= score[win] - 1 && score[second] > 0) ? T("r.second") + NAMES[second] : "";
+  [1,2,3].forEach(n => document.getElementById("step"+n).classList.add("hidden"));
+  document.getElementById("result").classList.remove("hidden");
+}
+document.querySelectorAll(".opt").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const q = btn.getAttribute("data-q");
+    answers[q] = btn.getAttribute("data-v");
+    if (q === "game") goto(2);
+    else if (q === "sens") goto(3);
+    else showResult();
+  });
+});
+document.getElementById("rRedo").addEventListener("click", () => {
+  Object.keys(answers).forEach(k => delete answers[k]);
+  goto(1);
+});
+apply(lang);
+</script>
+</body>
+</html>

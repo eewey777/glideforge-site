@@ -114,3 +114,17 @@ footer img{height:52px;border-radius:8px;margin-bottom:16px}
 .social-row a{color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:6px 16px;border-radius:999px;font-size:13px}
 .social-row a+a{margin-left:8px}
 .social-row a:hover{color:var(--text);border-color:var(--accent)}
+
+/* inquiry form */
+.inq-form{max-width:760px;margin:38px auto 0;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:30px 28px}
+.inq-form h3{font-size:22px;margin-bottom:20px;text-align:center}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ffield{margin-bottom:16px}
+.ffield label{display:block;font-weight:700;font-size:14px;margin-bottom:6px}
+.ffield input,.ffield select,.ffield textarea{width:100%;background:var(--bg2);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:11px 14px;font-size:15px;font-family:inherit}
+.ffield input:focus,.ffield select:focus,.ffield textarea:focus{outline:none;border-color:var(--blue)}
+.fchecks{display:flex;gap:22px;flex-wrap:wrap;padding-top:4px}
+.fchecks label{font-weight:400;display:flex;gap:7px;align-items:center;cursor:pointer}
+.fchecks input{width:auto}
+.fnote{color:var(--muted);font-size:13px;margin-top:14px}
+@media(max-width:640px){.frow{grid-template-columns:1fr}}

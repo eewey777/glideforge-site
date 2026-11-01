@@ -177,6 +177,18 @@
       <p data-i18n="explore.fun.d">Think your hands are fast? Wait for green, click, and get your rank — average human is ~250ms. Beat 180 and you're lightning.</p>
       <p style="margin-top:16px"><a class="btn ghost" href="fun.html" data-i18n="explore.go2">Play →</a></p>
     </article>
+    <article class="card">
+      <div class="tag" data-i18n="explore.finder.tag">PAD FINDER</div>
+      <h3 data-i18n="explore.finder.t">Three Questions, Your Pad</h3>
+      <p data-i18n="explore.finder.d">Your game, your sensitivity, your desk — answer three questions and get the pad that actually fits how you play.</p>
+      <p style="margin-top:16px"><a class="btn ghost" href="finder.html" data-i18n="explore.go3">Find My Pad →</a></p>
+    </article>
+    <article class="card">
+      <div class="tag" data-i18n="explore.edpi.tag">E-DPI TOOL</div>
+      <h3 data-i18n="explore.edpi.t">eDPI Calculator</h3>
+      <p data-i18n="explore.edpi.d">Convert your DPI and in-game sens into eDPI and cm/360, see how you stack up against the pro ranges.</p>
+      <p style="margin-top:16px"><a class="btn ghost" href="edpi.html" data-i18n="explore.go4">Calculate →</a></p>
+    </article>
   </div>
 </section>
 
@@ -188,6 +200,36 @@
     <div class="pick"><h4 data-i18n="contact.b2t">OEM & Custom</h4><p data-i18n="contact.b2d">Your artwork, your logo, custom sizes. Samples available; timing confirmed per order.</p></div>
     <div class="pick"><h4 data-i18n="contact.b3t">Distribution</h4><p data-i18n="contact.b3d">Regional distributors and resellers welcome. Tell us your market and channels.</p></div>
   </div>
+  <form class="inq-form" id="inqForm">
+    <h3 data-i18n="form.title">Send an Inquiry</h3>
+    <div class="frow">
+      <div class="ffield"><label data-i18n="form.name">Your name *</label><input id="fName" required></div>
+      <div class="ffield"><label data-i18n="form.email">Email *</label><input id="fEmail" type="email" required></div>
+    </div>
+    <div class="frow">
+      <div class="ffield"><label data-i18n="form.company">Company</label><input id="fCompany"></div>
+      <div class="ffield"><label data-i18n="form.type">Inquiry type</label>
+        <select id="fType">
+          <option data-i18n="form.type1">Bulk Orders</option>
+          <option data-i18n="form.type2">OEM & Custom</option>
+          <option data-i18n="form.type3">Distribution</option>
+        </select></div>
+    </div>
+    <div class="ffield"><label data-i18n="form.models">Models you're interested in</label>
+      <div class="fchecks">
+        <label><input type="checkbox" class="fModel" value="SWIFT"> SWIFT</label>
+        <label><input type="checkbox" class="fModel" value="CONTROL"> CONTROL</label>
+        <label><input type="checkbox" class="fModel" value="TITAN"> TITAN</label>
+      </div>
+    </div>
+    <div class="frow">
+      <div class="ffield"><label data-i18n="form.qty">Estimated quantity</label><input id="fQty" placeholder="e.g. 500 pcs"></div>
+      <div class="ffield"><label data-i18n="form.dest">Destination country</label><input id="fDest"></div>
+    </div>
+    <div class="ffield"><label data-i18n="form.msg">Message</label><textarea id="fMsg" rows="4"></textarea></div>
+    <button type="submit" class="btn primary" data-i18n="form.send">Prepare Inquiry Email</button>
+    <p class="fnote" data-i18n="form.note">Submitting opens your email app with everything pre-filled — just press send. Nothing leaves your device until you do.</p>
+  </form>
   <div class="contact-row">
     <a class="btn primary" href="mailto:eewey777@gmail.com" data-i18n="contact.btn">Email Us</a>
     <a class="btn ghost" href="https://www.tiktok.com/@user9306185237663" target="_blank" rel="noopener" data-i18n="contact.tiktok">Follow us on TikTok</a>

@@ -17,6 +17,8 @@ en: {
 "nav.products":"Products","nav.why":"Why Us","nav.specs":"Specs","nav.story":"Our Story","nav.contact":"Contact",
 "nav.tech":"Tech Lab","nav.fun":"Fun Zone",
 "explore.title":"More From the Forge","explore.tech.tag":"TECH LAB","explore.tech.t":"Gear Tech, No Marketing Fog","explore.tech.d":"Polling rates, sensors, rapid triggers and pad science — explained the way we'd explain it across the counter in our own store.","explore.go1":"Enter →","explore.fun.tag":"FUN ZONE","explore.fun.t":"The Reaction Challenge","explore.fun.d":"Think your hands are fast? Wait for green, click, and get your rank — average human is ~250ms. Beat 180 and you're lightning.","explore.go2":"Play →",
+"explore.finder.tag":"PAD FINDER","explore.finder.t":"Three Questions, Your Pad","explore.finder.d":"Your game, your sensitivity, your desk — answer three questions and get the pad that actually fits how you play.","explore.go3":"Find My Pad →","explore.edpi.tag":"E-DPI TOOL","explore.edpi.t":"eDPI Calculator","explore.edpi.d":"Convert your DPI and in-game sens into eDPI and cm/360, see how you stack up against the pro ranges.","explore.go4":"Calculate →",
+"form.title":"Send an Inquiry","form.name":"Your name *","form.email":"Email *","form.company":"Company","form.type":"Inquiry type","form.type1":"Bulk Orders","form.type2":"OEM & Custom","form.type3":"Distribution","form.models":"Models you're interested in","form.qty":"Estimated quantity","form.dest":"Destination country","form.msg":"Message","form.send":"Prepare Inquiry Email","form.note":"Submitting opens your email app with everything pre-filled — just press send. Nothing leaves your device until you do.",
 "hero.badge":"PRECISION ENGINEERED FOR VICTORY",
 "hero.h1a":"Glide Like Lightning.","hero.h1b":"Strike Like Thunder.",
 "hero.sub":"Pro-grade gaming mouse pads with buttery-smooth surfaces, pixel-precise tracking and marathon-ready durability — built for every clutch moment.",
@@ -65,6 +67,8 @@ zh: {
 "nav.products":"产品","nav.why":"为什么选我们","nav.specs":"规格","nav.story":"品牌故事","nav.contact":"联系我们",
 "nav.tech":"科技小站","nav.fun":"娱乐专区",
 "explore.title":"不止卖垫子","explore.tech.tag":"科技小站","explore.tech.t":"外设科技，不玩营销雾","explore.tech.d":"回报率、传感器、磁轴快速触发、垫面科学——就按我们在自己店里跟顾客讲的方式讲。","explore.go1":"进去看看 →","explore.fun.tag":"娱乐专区","explore.fun.t":"反应力挑战","explore.fun.d":"觉得自己手快？等变绿、点下去，看看你是什么段位——人类平均约 250 毫秒，低于 180 就是闪电手。","explore.go2":"开始玩 →",
+"explore.finder.tag":"选垫器","explore.finder.t":"三个问题，选出你的垫子","explore.finder.d":"你的游戏、你的灵敏度、你的桌面——回答三个问题，得到真正适合你打法的那一张。","explore.go3":"开始选 →","explore.edpi.tag":"工具","explore.edpi.t":"eDPI 计算器","explore.edpi.d":"把 DPI 和游戏内灵敏度换算成 eDPI 和 cm/360，看看你和职业区间差多远。","explore.go4":"去计算 →",
+"form.title":"发送询盘","form.name":"你的姓名 *","form.email":"邮箱 *","form.company":"公司","form.type":"询盘类型","form.type1":"批量采购","form.type2":"OEM 定制","form.type3":"经销合作","form.models":"感兴趣的型号","form.qty":"预计数量","form.dest":"目的国家","form.msg":"留言","form.send":"生成询盘邮件","form.note":"提交后会打开你设备上的邮件应用，内容已经填好，你点发送即可。在你点发送之前，任何信息都不会发出。",
 "hero.badge":"为胜利而生的精准操控",
 "hero.h1a":"疾如闪电，","hero.h1b":"势如雷霆。",
 "hero.sub":"职业级游戏鼠标垫：顺滑表面、像素级精准定位、持久耐用——为每一场关键对决而生。",
@@ -127,5 +131,33 @@ function setLang(l){
   setLang(l);
   document.getElementById("langBtn").addEventListener("click", () => {
     setLang(document.documentElement.lang === "zh-CN" ? "en" : "zh");
+  });
+})();
+
+// ---------- Inquiry form (builds a pre-filled email) ----------
+(function(){
+  const form = document.getElementById("inqForm");
+  if (!form) return;
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    const v = id => (document.getElementById(id).value || "").trim();
+    const models = Array.from(document.querySelectorAll(".fModel"))
+      .filter(c => c.checked).map(c => c.value).join(", ") || "-";
+    const type = v("fType");
+    const subject = "GlideForge Inquiry — " + type + (v("fCompany") ? " — " + v("fCompany") : "");
+    const lines = [
+      "Name: " + v("fName"),
+      "Email: " + v("fEmail"),
+      "Company: " + (v("fCompany") || "-"),
+      "Inquiry type: " + type,
+      "Models: " + models,
+      "Estimated quantity: " + (v("fQty") || "-"),
+      "Destination country: " + (v("fDest") || "-"),
+      "",
+      "Message:",
+      v("fMsg") || "-"
+    ];
+    window.location.href = "mailto:eewey777@gmail.com?subject=" +
+      encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
   });
 })();
