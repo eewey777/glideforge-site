@@ -15,6 +15,8 @@ const I18N = {
 en: {
 "meta.title":"GlideForge — Pro Gaming Mouse Pads",
 "nav.products":"Products","nav.why":"Why Us","nav.specs":"Specs","nav.story":"Our Story","nav.contact":"Contact",
+"nav.tech":"Tech Lab","nav.fun":"Fun Zone",
+"explore.title":"More From the Forge","explore.tech.tag":"TECH LAB","explore.tech.t":"Gear Tech, No Marketing Fog","explore.tech.d":"Polling rates, sensors, rapid triggers and pad science — explained the way we'd explain it across the counter in our own store.","explore.go1":"Enter →","explore.fun.tag":"FUN ZONE","explore.fun.t":"The Reaction Challenge","explore.fun.d":"Think your hands are fast? Wait for green, click, and get your rank — average human is ~250ms. Beat 180 and you're lightning.","explore.go2":"Play →",
 "hero.badge":"PRECISION ENGINEERED FOR VICTORY",
 "hero.h1a":"Glide Like Lightning.","hero.h1b":"Strike Like Thunder.",
 "hero.sub":"Pro-grade gaming mouse pads with buttery-smooth surfaces, pixel-precise tracking and marathon-ready durability — built for every clutch moment.",
@@ -61,6 +63,8 @@ en: {
 zh: {
 "meta.title":"GlideForge — 职业电竞鼠标垫",
 "nav.products":"产品","nav.why":"为什么选我们","nav.specs":"规格","nav.story":"品牌故事","nav.contact":"联系我们",
+"nav.tech":"科技小站","nav.fun":"娱乐专区",
+"explore.title":"不止卖垫子","explore.tech.tag":"科技小站","explore.tech.t":"外设科技，不玩营销雾","explore.tech.d":"回报率、传感器、磁轴快速触发、垫面科学——就按我们在自己店里跟顾客讲的方式讲。","explore.go1":"进去看看 →","explore.fun.tag":"娱乐专区","explore.fun.t":"反应力挑战","explore.fun.d":"觉得自己手快？等变绿、点下去，看看你是什么段位——人类平均约 250 毫秒，低于 180 就是闪电手。","explore.go2":"开始玩 →",
 "hero.badge":"为胜利而生的精准操控",
 "hero.h1a":"疾如闪电，","hero.h1b":"势如雷霆。",
 "hero.sub":"职业级游戏鼠标垫：顺滑表面、像素级精准定位、持久耐用——为每一场关键对决而生。",

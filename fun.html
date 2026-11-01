@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fun Zone — Reaction Test | GlideForge</title>
+<meta name="description" content="How fast are your hands, really? Take the GlideForge reaction-time challenge and see your rank.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<style>
+:root{--bg:#07070c;--bg2:#0d0d15;--card:#111118;--blue:#2f7df6;--blue2:#1e5fd0;--text:#f2f4f8;--muted:#9aa3b2;--line:#1e1e2a}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;gap:18px;padding:14px 28px;background:rgba(7,7,12,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:800;font-size:20px;letter-spacing:.5px}
+.brand img{height:38px;border-radius:6px}
+.links{display:flex;gap:24px;margin-left:auto}
+.links a{color:var(--muted);text-decoration:none;font-size:15px}
+.links a:hover,.links a.on{color:var(--blue)}
+.lang-btn{background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:6px 12px;font-size:14px;cursor:pointer}
+.hero{padding:150px 24px 20px;text-align:center;max-width:860px;margin:0 auto}
+.hero h1{font-size:clamp(32px,5.5vw,52px);font-weight:900;letter-spacing:.5px;margin-bottom:14px}
+.hero p{color:var(--muted);font-size:17px}
+.wrap{max-width:860px;margin:0 auto;padding:20px 24px 30px}
+#arena{border-radius:20px;border:1px solid var(--line);min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;cursor:pointer;user-select:none;-webkit-user-select:none;transition:background .15s;background:var(--card)}
+#arena.waiting{background:#5a1520}
+#arena.ready{background:#0f7a3d}
+#arena .big{font-size:clamp(30px,5vw,46px);font-weight:900;margin-bottom:10px}
+#arena .small{color:rgba(255,255,255,.75);font-size:16px}
+#arena.idle .small,#arena.done .small{color:var(--muted)}
+#rank{font-size:20px;font-weight:800;color:var(--blue);min-height:30px;margin-top:6px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:22px}
+.stats div{background:var(--bg2);padding:18px 8px;text-align:center}
+.stats strong{display:block;font-size:26px;color:var(--blue)}
+.stats span{color:var(--muted);font-size:13px}
+.note{text-align:center;color:var(--muted);font-size:14px;margin-top:18px}
+.tie{text-align:center;padding:26px 24px 70px;color:var(--muted);font-size:15px}
+.tie a{color:var(--blue);font-weight:700;text-decoration:none}
+footer{border-top:1px solid var(--line);padding:34px 24px;text-align:center;color:var(--muted);font-size:14px}
+footer a{color:var(--muted)}
+@media(max-width:640px){.links{display:none}.stats{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="brand" href="index.html"><img src="assets/logo.jpg" alt="GlideForge logo"><span>GlideForge</span></a>
+  <div class="links">
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <a href="index.html#products" data-i18n="nav.products">Products</a>
+    <a href="tech.html" data-i18n="nav.tech">Tech Lab</a>
+    <a href="fun.html" class="on" data-i18n="nav.fun">Fun Zone</a>
+    <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+  </div>
+  <button class="lang-btn" id="langBtn">中文</button>
+</nav>
+
+<header class="hero">
+  <h1 data-i18n="hero.h1">Reaction Challenge</h1>
+  <p data-i18n="hero.sub">Click the box to start. Wait for green, then click as fast as humanly possible. Average human: ~250ms. Pros react like it's slow motion.</p>
+</header>
+
+<main class="wrap">
+  <div id="arena" class="idle">
+    <div class="big" id="arenaBig">⚡ Click to Start</div>
+    <div class="small" id="arenaSmall">When the box turns green, click immediately.</div>
+    <div id="rank"></div>
+  </div>
+  <div class="stats">
+    <div><strong id="stLast">—</strong><span data-i18n="st.last">Last</span></div>
+    <div><strong id="stBest">—</strong><span data-i18n="st.best">Best</span></div>
+    <div><strong id="stAvg">—</strong><span data-i18n="st.avg">Avg (last 5)</span></div>
+    <div><strong id="stTries">0</strong><span data-i18n="st.tries">Attempts</span></div>
+  </div>
+  <p class="note" data-i18n="note">Tip: a high-refresh monitor and a low-latency mouse genuinely shave milliseconds. So does not blinking.</p>
+</main>
+
+<p class="tie"><span data-i18n="tie.t">Fast hands deserve a fast surface.</span> <a href="index.html#products" data-i18n="tie.a">Meet the SWIFT →</a></p>
+
+<footer>
+  <p>© 2026 GlideForge™. <span data-i18n="footer.rights">All rights reserved.</span> · <a href="index.html">gfpad.com</a></p>
+</footer>
+
+<script>
+const I18N = {
+en: {
+"nav.home":"Home","nav.products":"Products","nav.tech":"Tech Lab","nav.fun":"Fun Zone","nav.contact":"Contact",
+"hero.h1":"Reaction Challenge",
+"hero.sub":"Click the box to start. Wait for green, then click as fast as humanly possible. Average human: ~250ms. Pros react like it's slow motion.",
+"st.last":"Last","st.best":"Best","st.avg":"Avg (last 5)","st.tries":"Attempts",
+"note":"Tip: a high-refresh monitor and a low-latency mouse genuinely shave milliseconds. So does not blinking.",
+"tie.t":"Fast hands deserve a fast surface.","tie.a":"Meet the SWIFT →","footer.rights":"All rights reserved.",
+"g.start":"⚡ Click to Start","g.how":"When the box turns green, click immediately.",
+"g.wait":"Wait for green…","g.waitSub":"Don't jump the gun.",
+"g.click":"CLICK!","g.clickSub":"",
+"g.early":"Too soon!","g.earlySub":"You clicked before green. Click to try again.",
+"g.againSub":"Click to go again.",
+"r1":"⚡ Lightning hands — pro tier","r2":"🔥 Pro-level reactions","r3":"🎯 Sharp. Very sharp.","r4":"👍 Solidly average — room to climb","r5":"🐢 Warming up… go again"
+},
+zh: {
+"nav.home":"首页","nav.products":"产品","nav.tech":"科技小站","nav.fun":"娱乐专区","nav.contact":"联系我们",
+"hero.h1":"反应力挑战",
+"hero.sub":"点框开始，等它变绿，用你最快的速度点下去。人类平均约 250 毫秒，职业选手看什么都像慢动作。",
+"st.last":"上次","st.best":"最佳","st.avg":"近 5 次平均","st.tries":"尝试次数",
+"note":"小提示：高刷屏和低延迟鼠标真的能省下几毫秒。不眨眼也行。",
+"tie.t":"手快，垫子也得跟得上。","tie.a":"看看 SWIFT →","footer.rights":"保留所有权利。",
+"g.start":"⚡ 点击开始","g.how":"框变绿的那一瞬间，立刻点。",
+"g.wait":"等变绿…","g.waitSub":"别抢跑。",
+"g.click":"点！","g.clickSub":"",
+"g.early":"抢跑了！","g.earlySub":"绿之前就点了。点一下再来。",
+"g.againSub":"点一下再来一局。",
+"r1":"⚡ 电竞级手速","r2":"🔥 职业级反应","r3":"🎯 够锋利","r4":"👍 水平在线，还有上升空间","r5":"🐢 热身中……再来一局"
+}};
+let lang = "en";
+try { lang = localStorage.getItem("gf-lang") || "en"; } catch(e) {}
+const T = k => I18N[lang][k] || k;
+function apply(l){
+  lang = l;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const k = el.getAttribute("data-i18n");
+    if (I18N[l][k]) el.innerHTML = I18N[l][k];
+  });
+  document.getElementById("langBtn").textContent = l === "zh" ? "EN" : "中文";
+  document.documentElement.lang = l === "zh" ? "zh-CN" : "en";
+  try { localStorage.setItem("gf-lang", l); } catch(e) {}
+  reset(true);
+}
+document.getElementById("langBtn").addEventListener("click", () => apply(lang === "zh" ? "en" : "zh"));
+
+// ---------- Reaction game ----------
+const arena = document.getElementById("arena");
+const big = document.getElementById("arenaBig");
+const small = document.getElementById("arenaSmall");
+const rankEl = document.getElementById("rank");
+let state = "idle", timer = null, greenAt = 0;
+let tries = 0, history = [];
+let best = null;
+try { best = parseInt(localStorage.getItem("gf-reaction-best")) || null; } catch(e) {}
+
+function rankFor(ms){
+  if (ms <= 180) return T("r1");
+  if (ms <= 220) return T("r2");
+  if (ms <= 260) return T("r3");
+  if (ms <= 320) return T("r4");
+  return T("r5");
+}
+function refreshStats(){
+  document.getElementById("stLast").textContent = history.length ? history[history.length-1] + "ms" : "—";
+  document.getElementById("stBest").textContent = best ? best + "ms" : "—";
+  const last5 = history.slice(-5);
+  document.getElementById("stAvg").textContent = last5.length ? Math.round(last5.reduce((a,b)=>a+b,0)/last5.length) + "ms" : "—";
+  document.getElementById("stTries").textContent = tries;
+}
+function reset(keepStats){
+  clearTimeout(timer);
+  state = "idle";
+  arena.className = "idle";
+  big.textContent = T("g.start");
+  small.textContent = T("g.how");
+  rankEl.textContent = "";
+  if (!keepStats) refreshStats();
+}
+function startWait(){
+  state = "waiting";
+  arena.className = "waiting";
+  big.textContent = T("g.wait");
+  small.textContent = T("g.waitSub");
+  rankEl.textContent = "";
+  timer = setTimeout(() => {
+    state = "ready";
+    arena.className = "ready";
+    big.textContent = T("g.click");
+    small.textContent = T("g.clickSub");
+    greenAt = performance.now();
+  }, 1200 + Math.random() * 2800);
+}
+arena.addEventListener("click", () => {
+  if (state === "idle" || state === "done") { startWait(); return; }
+  if (state === "waiting") {
+    clearTimeout(timer);
+    state = "done";
+    arena.className = "idle";
+    big.textContent = T("g.early");
+    small.textContent = T("g.earlySub");
+    return;
+  }
+  if (state === "ready") {
+    const ms = Math.round(performance.now() - greenAt);
+    state = "done";
+    arena.className = "idle";
+    big.textContent = ms + " ms";
+    small.textContent = T("g.againSub");
+    rankEl.textContent = rankFor(ms);
+    tries++;
+    history.push(ms);
+    if (!best || ms < best) {
+      best = ms;
+      try { localStorage.setItem("gf-reaction-best", best); } catch(e) {}
+    }
+    refreshStats();
+  }
+});
+apply(lang);
+reset(true);
+refreshStats();
+</script>
+</body>
+</html>
