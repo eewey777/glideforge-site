@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sensitivity Converter — GlideForge</title>
+<meta name="description" content="Convert your mouse sensitivity between Valorant, CS2, Apex Legends and Overwatch 2 while keeping the same cm/360 — so your aim feels identical in every game.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<style>
+:root{--bg:#07070c;--bg2:#0d0d15;--card:#111118;--blue:#2f7df6;--blue2:#1e5fd0;--text:#f2f4f8;--muted:#9aa3b2;--line:#1e1e2a}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;gap:18px;padding:14px 28px;background:rgba(7,7,12,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:800;font-size:20px;letter-spacing:.5px}
+.brand img{height:38px;border-radius:6px}
+.links{display:flex;gap:24px;margin-left:auto}
+.links a{color:var(--muted);text-decoration:none;font-size:15px}
+.links a:hover,.links a.on{color:var(--blue)}
+.lang-btn{background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:6px 12px;font-size:14px;cursor:pointer}
+.hero{padding:150px 24px 10px;text-align:center;max-width:860px;margin:0 auto}
+.hero h1{font-size:clamp(32px,5.5vw,52px);font-weight:900;letter-spacing:.5px;margin-bottom:14px}
+.hero p{color:var(--muted);font-size:17px}
+.wrap{max-width:760px;margin:0 auto;padding:26px 24px 70px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:36px 32px}
+.field{margin-bottom:22px}
+.field label{display:block;font-weight:700;margin-bottom:8px;font-size:15px}
+.field select,.field input{width:100%;background:var(--bg2);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:13px 16px;font-size:17px;font-family:inherit}
+.field select:focus,.field input:focus{outline:none;border-color:var(--blue)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.arrow{text-align:center;font-size:26px;color:var(--muted);margin:-6px 0 14px}
+.big{text-align:center;padding:10px 0 4px}
+.big strong{display:block;font-size:56px;font-weight:900;color:var(--blue);line-height:1.1}
+.big span{color:var(--muted);font-size:14px}
+.sub{text-align:center;color:var(--muted);font-size:15px;margin-top:6px}
+.advice{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-top:20px;color:var(--muted);font-size:15px}
+.advice b{color:var(--text)}
+.advice a{color:var(--blue);font-weight:700;text-decoration:none}
+.note{color:var(--muted);font-size:14px;margin-top:18px}
+footer{border-top:1px solid var(--line);padding:34px 24px;text-align:center;color:var(--muted);font-size:14px}
+footer a{color:var(--muted)}
+@media(max-width:640px){.links{display:none}.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="brand" href="index.html"><img src="assets/logo.jpg" alt="GlideForge logo"><span>GlideForge</span></a>
+  <div class="links">
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <a href="index.html#products" data-i18n="nav.products">Products</a>
+    <a href="tech.html" data-i18n="nav.tech">Tech Lab</a>
+    <a href="fun.html" data-i18n="nav.fun">Fun Zone</a>
+    <a href="finder.html" data-i18n="nav.finder">Pad Finder</a>
+    <a href="edpi.html" data-i18n="nav.edpi">eDPI Tool</a>
+    <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+  </div>
+  <button class="lang-btn" id="langBtn">中文</button>
+</nav>
+
+<header class="hero">
+  <h1 data-i18n="hero.h1">Sensitivity Converter</h1>
+  <p data-i18n="hero.sub">Switching games? Keep the same hand feel — convert your sensitivity so your cm/360 stays exactly the same.</p>
+</header>
+
+<main class="wrap">
+  <div class="panel">
+    <div class="row">
+      <div class="field">
+        <label data-i18n="f.from">From game</label>
+        <select id="fromGame">
+          <option value="valorant">Valorant</option>
+          <option value="cs2">CS2</option>
+          <option value="apex">Apex Legends</option>
+          <option value="ow2">Overwatch 2</option>
+        </select>
+      </div>
+      <div class="field">
+        <label data-i18n="f.fromSens">Your sensitivity there</label>
+        <input id="fromSens" type="number" value="0.31" min="0.01" max="100" step="0.01">
+      </div>
+    </div>
+    <div class="field">
+      <label data-i18n="f.dpi">Mouse DPI (same in both games)</label>
+      <input id="dpi" type="number" value="800" min="100" max="32000" step="50">
+    </div>
+    <div class="arrow">↓</div>
+    <div class="field">
+      <label data-i18n="f.to">To game</label>
+      <select id="toGame">
+        <option value="valorant">Valorant</option>
+        <option value="cs2" selected>CS2</option>
+        <option value="apex">Apex Legends</option>
+        <option value="ow2">Overwatch 2</option>
+      </select>
+    </div>
+    <div class="big"><strong id="toSensOut">0.99</strong><span id="toSensLbl" data-i18n="o.sens">sensitivity in CS2</span></div>
+    <p class="sub"><span data-i18n="o.cm">Same hand feel:</span> <b id="cmOut" style="color:var(--text)">52.7 cm</b> <span data-i18n="o.cm2">per 360° turn, in both games</span></p>
+    <div class="advice" id="advice"></div>
+    <p class="note" data-i18n="note">Note: this converts hipfire sensitivity only — scoped / ADS zoom sensitivities are separate settings in each game and are not converted. Conversion factors match the eDPI Calculator on this site, so the two tools always agree.</p>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 GlideForge™. <span data-i18n="footer.rights">All rights reserved.</span> · <a href="index.html">gfpad.com</a></p>
+</footer>
+
+<script>
+const I18N = {
+en: {
+"nav.home":"Home","nav.products":"Products","nav.tech":"Tech Lab","nav.fun":"Fun Zone","nav.finder":"Pad Finder","nav.edpi":"eDPI Tool","nav.contact":"Contact",
+"hero.h1":"Sensitivity Converter","hero.sub":"Switching games? Keep the same hand feel — convert your sensitivity so your cm/360 stays exactly the same.",
+"f.from":"From game","f.fromSens":"Your sensitivity there","f.dpi":"Mouse DPI (same in both games)","f.to":"To game",
+"o.sens":"sensitivity","o.cm":"Same hand feel:","o.cm2":"per 360° turn, in both games",
+"a.low":"At {cm} cm/360 you are an arm player. Whatever game you switch to, you still need width: at least a 450 × 400mm pad, ideally the 900mm TITAN desk mat.",
+"a.mid":"At {cm} cm/360 you're in hybrid territory. A 450 × 400mm pad (SWIFT or CONTROL) covers a full 180 with room to spare.",
+"a.high":"At {cm} cm/360 you're a wrist player. Any GlideForge size works — pick your surface by feel: SWIFT for glide, CONTROL for stopping power.",
+"a.link":"Find your pad →","footer.rights":"All rights reserved.",
+"note":"Note: this converts hipfire sensitivity only — scoped / ADS zoom sensitivities are separate settings in each game and are not converted. Conversion factors match the eDPI Calculator on this site, so the two tools always agree."
+},
+zh: {
+"nav.home":"首页","nav.products":"产品","nav.tech":"科技小站","nav.fun":"娱乐专区","nav.finder":"选垫器","nav.edpi":"eDPI 工具","nav.contact":"联系我们",
+"hero.h1":"灵敏度换算器","hero.sub":"换游戏玩，手感不用重练——按相同的 cm/360° 把灵敏度换算过去，鼠标一上手就是原来的感觉。",
+"f.from":"原游戏","f.fromSens":"你在原游戏的灵敏度","f.dpi":"鼠标 DPI（两边相同）","f.to":"目标游戏",
+"o.sens":"灵敏度","o.cm":"手感不变：","o.cm2":"转身 360°，两个游戏完全一样",
+"a.low":"{cm} 厘米/360°，你是手臂流。换到哪个游戏都一样需要宽度：至少 450×400mm，最好直接 900mm 的 TITAN 桌垫。",
+"a.mid":"{cm} 厘米/360°，你在混合区间。450×400mm 的垫子（SWIFT 或 CONTROL）足够完成一次完整的 180 度转身还有富余。",
+"a.high":"{cm} 厘米/360°，你是手腕流。GlideForge 哪个尺寸都够用——按手感选面：SWIFT 图滑，CONTROL 图停得稳。",
+"a.link":"去选你的垫子 →","footer.rights":"保留所有权利。",
+"note":"说明：只换算腰射（不开镜）灵敏度——各游戏的开镜/机瞄灵敏度是独立设置，不在此换算内。换算系数与本站 eDPI 计算器一致，两处工具永远对得上。"
+}};
+// Yaw factors (degrees per count) — identical to edpi.html, so both tools agree.
+const GAMES = {
+  valorant: { yaw: 0.07,   defSens: 0.31 },
+  cs2:      { yaw: 0.022,  defSens: 1.25 },
+  apex:     { yaw: 0.022,  defSens: 1.5 },
+  ow2:      { yaw: 0.0066, defSens: 5.0 }
+};
+const GAME_NAME = { valorant: "Valorant", cs2: "CS2", apex: "Apex Legends", ow2: "Overwatch 2" };
+let lang = "en";
+try { lang = localStorage.getItem("gf-lang") || "en"; } catch(e) {}
+const T = k => I18N[lang][k] || k;
+function apply(l){
+  lang = l;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const k = el.getAttribute("data-i18n");
+    if (I18N[l][k]) el.innerHTML = I18N[l][k];
+  });
+  document.getElementById("langBtn").textContent = l === "zh" ? "EN" : "中文";
+  document.documentElement.lang = l === "zh" ? "zh-CN" : "en";
+  try { localStorage.setItem("gf-lang", l); } catch(e) {}
+  calc();
+}
+document.getElementById("langBtn").addEventListener("click", () => apply(lang === "zh" ? "en" : "zh"));
+const fromGameEl = document.getElementById("fromGame");
+const toGameEl = document.getElementById("toGame");
+const fromSensEl = document.getElementById("fromSens");
+const dpiEl = document.getElementById("dpi");
+fromGameEl.addEventListener("change", () => { fromSensEl.value = GAMES[fromGameEl.value].defSens; calc(); });
+toGameEl.addEventListener("change", calc);
+fromSensEl.addEventListener("input", calc);
+dpiEl.addEventListener("input", calc);
+function calc(){
+  const gf = GAMES[fromGameEl.value], gt = GAMES[toGameEl.value];
+  const dpi = parseFloat(dpiEl.value) || 0;
+  const sens = parseFloat(fromSensEl.value) || 0;
+  // cm/360 is the game-independent quantity: cm = 914.4 / (DPI * sens * yaw)
+  const cm = (dpi > 0 && sens > 0) ? (914.4 / (dpi * sens * gf.yaw)) : 0;
+  const toSens = cm ? (914.4 / (cm * dpi * gt.yaw)) : 0;
+  document.getElementById("toSensOut").textContent = toSens ? toSens.toFixed(2) : "—";
+  document.getElementById("toSensLbl").textContent = T("o.sens") + " (" + GAME_NAME[toGameEl.value] + ")";
+  document.getElementById("cmOut").textContent = cm ? cm.toFixed(1) + " cm" : "—";
+  const adv = document.getElementById("advice");
+  if (!cm) { adv.innerHTML = ""; return; }
+  const key = cm >= 45 ? "a.low" : (cm >= 30 ? "a.mid" : "a.high");
+  adv.innerHTML = T(key).replace("{cm}", cm.toFixed(1)) + ' <a href="finder.html">' + T("a.link") + "</a>";
+}
+apply(lang);
+</script>
+</body>
+</html>
