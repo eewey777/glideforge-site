@@ -89,6 +89,7 @@ footer a{color:var(--muted)}
     <div class="barlbl"><span id="lblMin"></span><span data-i18n="o.pro">Pro range</span><span id="lblMax"></span></div>
     <div class="verdict" id="verdict"></div>
     <div class="advice" id="advice"></div>
+    <p class="note" style="text-align:center;margin-top:16px"><a id="deskLink" href="deskfit.html" style="color:var(--blue);font-weight:700;text-decoration:none" data-i18n="desk.link">Will it fit your desk? Check →</a></p>
   </div>
 </main>
 
@@ -109,7 +110,7 @@ en: {
 "a.low":"At {cm} cm/360 you are an arm player. You need width: at least a 450 × 400mm pad, ideally the 900mm TITAN desk mat — running out of pad mid-flick is a settings problem you can buy your way out of.",
 "a.mid":"At {cm} cm/360 you're in hybrid territory. A 450 × 400mm pad (SWIFT or CONTROL) covers a full 180 with room to spare.",
 "a.high":"At {cm} cm/360 you're a wrist player. Any GlideForge size works — pick your surface by feel: SWIFT for glide, CONTROL for stopping power.",
-"a.link":"Find your pad →","footer.rights":"All rights reserved."
+"a.link":"Find your pad →","footer.rights":"All rights reserved.","desk.link":"Will it fit your desk? Check →"
 },
 zh: {
 "nav.home":"首页","nav.products":"产品","nav.tech":"科技小站","nav.fun":"娱乐专区","nav.finder":"选垫器","nav.contact":"联系我们",
@@ -122,7 +123,7 @@ zh: {
 "a.low":"{cm} 厘米/360°，你是手臂流。你需要宽度：至少 450×400mm，最好直接 900mm 的 TITAN 桌垫——拉枪拉到一半垫子到头，是个花钱能解决的设置问题。",
 "a.mid":"{cm} 厘米/360°，你在混合区间。450×400mm 的垫子（SWIFT 或 CONTROL）足够完成一次完整的 180 度转身还有富余。",
 "a.high":"{cm} 厘米/360°，你是手腕流。GlideForge 哪个尺寸都够用——按手感选面：SWIFT 图滑，CONTROL 图停得稳。",
-"a.link":"去选你的垫子 →","footer.rights":"保留所有权利。"
+"a.link":"去选你的垫子 →","footer.rights":"保留所有权利。","desk.link":"你的桌子放得下吗？去检查 →"
 }};
 const GAMES = {
   valorant: { yaw: 0.07,   proMin: 160,  proMax: 400,  defSens: 0.31, scaleMax: 800 },
@@ -177,6 +178,7 @@ function calc(){
   if (!cm) { adv.innerHTML = ""; return; }
   const key = cm >= 45 ? "a.low" : (cm >= 30 ? "a.mid" : "a.high");
   adv.innerHTML = T(key).replace("{cm}", cm.toFixed(1)) + ' <a href="finder.html">' + T("a.link") + "</a>";
+  const dl = document.getElementById("deskLink"); if (dl) dl.href = "deskfit.html?cm=" + cm.toFixed(1);
 }
 apply(lang);
 </script>
