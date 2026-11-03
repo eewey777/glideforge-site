@@ -17,7 +17,7 @@ en: {
 "nav.products":"Products","nav.why":"Why Us","nav.specs":"Specs","nav.story":"Our Story","nav.contact":"Contact",
 "nav.tech":"Tech Lab","nav.fun":"Fun Zone",
 "explore.title":"More From the Forge","explore.tech.tag":"TECH LAB","explore.tech.t":"Gear Tech, No Marketing Fog","explore.tech.d":"Polling rates, sensors, rapid triggers and pad science — explained the way we'd explain it across the counter in our own store.","explore.go1":"Enter →","explore.fun.tag":"FUN ZONE","explore.fun.t":"The Reaction Challenge","explore.fun.d":"Think your hands are fast? Wait for green, click, and get your rank — average human is ~250ms. Beat 180 and you're lightning.","explore.go2":"Play →",
-"explore.finder.tag":"PAD FINDER","explore.finder.t":"Three Questions, Your Pad","explore.finder.d":"Your game, your sensitivity, your desk — answer three questions and get the pad that actually fits how you play.","explore.go3":"Find My Pad →","explore.edpi.tag":"E-DPI TOOL","explore.edpi.t":"eDPI Calculator","explore.edpi.d":"Convert your DPI and in-game sens into eDPI and cm/360, see how you stack up against the pro ranges.","explore.go4":"Calculate →","explore.conv.tag":"SENS CONVERTER","explore.conv.t":"Sensitivity Converter","explore.conv.d":"Switching games? Convert your sensitivity between Valorant, CS2, Apex and Overwatch 2 at the same cm/360 — your aim feels identical.","explore.go5":"Convert →","explore.desk.tag":"DESK CHECK","explore.desk.t":"Will It Fit Your Desk?","explore.desk.d":"Enter your desk size and keyboard layout — see which pads fit, and whether your mouse has room for a full 360 at your sensitivity.","explore.go6":"Check My Desk →",
+"explore.finder.tag":"PAD FINDER","explore.finder.t":"Three Questions, Your Pad","explore.finder.d":"Your game, your sensitivity, your desk — answer three questions and get the pad that actually fits how you play.","explore.go3":"Find My Pad →","explore.edpi.tag":"E-DPI TOOL","explore.edpi.t":"eDPI Calculator","explore.edpi.d":"Convert your DPI and in-game sens into eDPI and cm/360, see how you stack up against the pro ranges.","explore.go4":"Calculate →","explore.conv.tag":"SENS CONVERTER","explore.conv.t":"Sensitivity Converter","explore.conv.d":"Switching games? Convert your sensitivity between Valorant, CS2, Apex and Overwatch 2 at the same cm/360 — your aim feels identical.","explore.go5":"Convert →","explore.desk.tag":"DESK CHECK","explore.desk.t":"Will It Fit Your Desk?","explore.desk.d":"Enter your desk size and keyboard layout — see which pads fit, and whether your mouse has room for a full 360 at your sensitivity.","explore.go6":"Check My Desk →","notify.title":"Get Notified at Launch","notify.text":"Final photos and pricing are on the way. Tell us which pad you want and leave your email — we'll send exactly one email when it launches. No spam, no sharing your address.","notify.models":"Which pad(s) do you want?","notify.email":"Email *","notify.send":"Notify Me","notify.note":"Submitting opens your email app with a short pre-filled sign-up — just press send. One launch email, that's it.",
 "form.title":"Send an Inquiry","form.name":"Your name *","form.email":"Email *","form.company":"Company","form.type":"Inquiry type","form.type1":"Bulk Orders","form.type2":"OEM & Custom","form.type3":"Distribution","form.models":"Models you're interested in","form.qty":"Estimated quantity","form.dest":"Destination country","form.msg":"Message","form.send":"Prepare Inquiry Email","form.note":"Submitting opens your email app with everything pre-filled — just press send. Nothing leaves your device until you do.",
 "hero.badge":"PRECISION ENGINEERED FOR VICTORY",
 "hero.h1a":"Glide Like Lightning.","hero.h1b":"Strike Like Thunder.",
@@ -67,7 +67,7 @@ zh: {
 "nav.products":"产品","nav.why":"为什么选我们","nav.specs":"规格","nav.story":"品牌故事","nav.contact":"联系我们",
 "nav.tech":"科技小站","nav.fun":"娱乐专区",
 "explore.title":"不止卖垫子","explore.tech.tag":"科技小站","explore.tech.t":"外设科技，不玩营销雾","explore.tech.d":"回报率、传感器、磁轴快速触发、垫面科学——就按我们在自己店里跟顾客讲的方式讲。","explore.go1":"进去看看 →","explore.fun.tag":"娱乐专区","explore.fun.t":"反应力挑战","explore.fun.d":"觉得自己手快？等变绿、点下去，看看你是什么段位——人类平均约 250 毫秒，低于 180 就是闪电手。","explore.go2":"开始玩 →",
-"explore.finder.tag":"选垫器","explore.finder.t":"三个问题，选出你的垫子","explore.finder.d":"你的游戏、你的灵敏度、你的桌面——回答三个问题，得到真正适合你打法的那一张。","explore.go3":"开始选 →","explore.edpi.tag":"工具","explore.edpi.t":"eDPI 计算器","explore.edpi.d":"把 DPI 和游戏内灵敏度换算成 eDPI 和 cm/360，看看你和职业区间差多远。","explore.go4":"去计算 →","explore.conv.tag":"工具","explore.conv.t":"灵敏度转换器","explore.conv.d":"换游戏不换手感：把灵敏度在 Valorant、CS2、Apex、OW2 之间按相同 cm/360 互换，瞄准感觉保持一致。","explore.go5":"去转换 →","explore.desk.tag":"工具","explore.desk.t":"你的桌子放得下吗？","explore.desk.d":"填桌面尺寸和键盘摆法，立刻看三张垫哪张放得下、鼠标空间够不够按你的灵敏度转一整圈。","explore.go6":"去检查 →",
+"explore.finder.tag":"选垫器","explore.finder.t":"三个问题，选出你的垫子","explore.finder.d":"你的游戏、你的灵敏度、你的桌面——回答三个问题，得到真正适合你打法的那一张。","explore.go3":"开始选 →","explore.edpi.tag":"工具","explore.edpi.t":"eDPI 计算器","explore.edpi.d":"把 DPI 和游戏内灵敏度换算成 eDPI 和 cm/360，看看你和职业区间差多远。","explore.go4":"去计算 →","explore.conv.tag":"工具","explore.conv.t":"灵敏度转换器","explore.conv.d":"换游戏不换手感：把灵敏度在 Valorant、CS2、Apex、OW2 之间按相同 cm/360 互换，瞄准感觉保持一致。","explore.go5":"去转换 →","explore.desk.tag":"工具","explore.desk.t":"你的桌子放得下吗？","explore.desk.d":"填桌面尺寸和键盘摆法，立刻看三张垫哪张放得下、鼠标空间够不够按你的灵敏度转一整圈。","explore.go6":"去检查 →","notify.title":"上市时第一时间通知你","notify.text":"实拍图和最终售价还在最后确认中。勾选你想要的型号、留下邮箱，上市时我们只发一封邮件通知你。不发广告、不外传邮箱。","notify.models":"你想要哪张垫？（可多选）","notify.email":"邮箱 *","notify.send":"上市时通知我","notify.note":"提交会打开你的邮件 App，里面是预填好的登记内容，点发送即可。只发这一封上市通知。",
 "form.title":"发送询盘","form.name":"你的姓名 *","form.email":"邮箱 *","form.company":"公司","form.type":"询盘类型","form.type1":"批量采购","form.type2":"OEM 定制","form.type3":"经销合作","form.models":"感兴趣的型号","form.qty":"预计数量","form.dest":"目的国家","form.msg":"留言","form.send":"生成询盘邮件","form.note":"提交后会打开你设备上的邮件应用，内容已经填好，你点发送即可。在你点发送之前，任何信息都不会发出。",
 "hero.badge":"为胜利而生的精准操控",
 "hero.h1a":"疾如闪电，","hero.h1b":"势如雷霆。",
@@ -156,6 +156,26 @@ function setLang(l){
       "",
       "Message:",
       v("fMsg") || "-"
+    ];
+    window.location.href = "mailto:eewey777@gmail.com?subject=" +
+      encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
+  });
+})();
+
+// ---------- Launch notify signup (builds a pre-filled email) ----------
+(function(){
+  const form = document.getElementById("notifyForm");
+  if (!form) return;
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    const email = (document.getElementById("nEmail").value || "").trim();
+    const models = Array.from(document.querySelectorAll(".nModel"))
+      .filter(c => c.checked).map(c => c.value).join(", ") || "-";
+    const subject = "GlideForge Launch Notify — " + models;
+    const lines = [
+      "Please notify me when GlideForge launches.",
+      "Models: " + models,
+      "Email: " + email
     ];
     window.location.href = "mailto:eewey777@gmail.com?subject=" +
       encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
